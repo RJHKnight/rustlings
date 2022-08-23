@@ -4,6 +4,7 @@
 // Step 2: Get the bar_for_fuzz and default_to_baz tests passing!
 // Execute `rustlings hint if2` or use the `hint` watch subcommand for a hint.
 
+<<<<<<< Updated upstream
 pub fn foo_if_fizz(fizzish: &str) -> &str {
     if fizzish == "fizz" {
         "foo"
@@ -12,6 +13,14 @@ pub fn foo_if_fizz(fizzish: &str) -> &str {
         "bar"
     }
     else {
+=======
+pub fn fizz_if_foo(fizzish: &str) -> &str {
+    if fizzish == "fizz" {
+        "foo"
+    } else if fizzish == "fuzz" {
+        "bar"
+    }else {
+>>>>>>> Stashed changes
         "baz"
     }
 }
