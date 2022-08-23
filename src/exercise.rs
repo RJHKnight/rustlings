@@ -75,6 +75,7 @@ pub struct ContextLine {
     pub important: bool,
 }
 
+
 // The result of compiling an exercise
 pub struct CompiledExercise<'a> {
     exercise: &'a Exercise,
