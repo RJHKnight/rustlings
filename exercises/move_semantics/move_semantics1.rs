@@ -3,12 +3,7 @@
 
 
 fn main() {
-<<<<<<< Updated upstream
-    let vec0 = Vec::new();
-
-=======
     let mut vec0 = Vec::new();
->>>>>>> Stashed changes
     let mut vec1 = fill_vec(vec0);
 
     println!("{} has length {} content `{:?}`", "vec1", vec1.len(), vec1);
