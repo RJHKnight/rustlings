@@ -9,7 +9,7 @@
 // the price of an order of apples given the quantity bought. No hints this time!
 
 // Put your function here!
-fn calculate_apple_price(quantity :i32) -> i32 {
+fn calculate_price_of_apples(quantity :i32) -> i32 {
 
     if (quantity > 40) {
         quantity
