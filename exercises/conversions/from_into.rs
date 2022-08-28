@@ -35,10 +35,50 @@ impl Default for Person {
 // If while parsing the age, something goes wrong, then return the default of Person
 // Otherwise, then return an instantiated Person object with the results
 
-// I AM NOT DONE
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+
+        if s.len() == 0 {
+            return Person::default();
+        }
+
+        let mut bits = s.split(",");
+        let bit = bits.next();
+
+        // Check we have a name
+        if let Some(name) = bit {
+
+            let name = name.to_string();
+
+            // Avoid empty names
+            if name.len() == 0 {
+                return Person::default();
+            }
+
+            let mut bit = bits.next();
+            
+            // Check that there are no more bits.
+            if let Some(_other) = bits.next() {
+                return Person::default();
+            }
+            
+            // Check age is provided
+            let age;
+            match bit {
+                Some(bit) => age = bit.parse::<usize>(),
+                None => return Person::default(),
+            }
+
+            // And that we can parse it as a number.
+            match age {
+                Ok(age) => Person{name,age},
+                _ => return Person::default(),
+            }
+        }
+        else {
+            Person::default()
+        }
     }
 }
 
